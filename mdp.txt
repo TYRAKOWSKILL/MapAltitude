@@ -1,0 +1,7 @@
+potac91712@jancloud.net
+potac91712@jancloud.net
+
+https://graphhopper.com/
+
+exemple route : https://graphhopper.com/api/1/route?point=49.9,2.3&point=48.8534,2.3488&vehicle=car&key=74e8d645-e18a-47ef-8792-00b6f6f8eeb4&type=json
+exemple elevation : https://api.open-elevation.com/api/v1/lookup?locations=41.161758,-8.583933
