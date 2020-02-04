@@ -1,11 +1,8 @@
 L.mapquest.key = 'YCkvK78NdGpW7eQx5LwDX5inOZHxUUsb';
+var map = null;
 window.onload = function() {
-    var map = L.mapquest.map('map', {
-      center: [49.9, 2.3],
-      layers: L.mapquest.tileLayer('map'),
-      zoom: 12
-    });
 
+    this.initMap();
     document.getElementById('buttonOk').addEventListener('click', () => {
         var ville1 = document.getElementById('ville1').value;
         var ville2 = document.getElementById('ville2').value;
@@ -15,7 +12,17 @@ window.onload = function() {
     }, true);
 }
 
+function initMap() {
+     map = L.mapquest.map('map', {
+        center: [49.9, 2.3],
+        layers: L.mapquest.tileLayer('map'),
+        zoom: 12
+      });
+}
+
 function myDirection(ville1, ville2) {
+    map.remove();
+    this.initMap();
     var directions = L.mapquest.directions();
     directions.route({
         start: ville1,
@@ -47,7 +54,7 @@ function getElevation(ville1, ville2) {
 }
 
 function setElevation(stringGeoLoc) {
-    var url= 'http://open.mapquestapi.com/elevation/v1/chart?key=YCkvK78NdGpW7eQx5LwDX5inOZHxUUsb&latLngCollection='+ stringGeoLoc;
+    var url= 'http://open.mapquestapi.com/elevation/v1/chart?key=YCkvK78NdGpW7eQx5LwDX5inOZHxUUsb&shapeFormat=raw&width=800&height=800&latLngCollection='+ stringGeoLoc;
     fetch(url)
         .then(res=>{return res.blob()})
         .then(blob=>{
