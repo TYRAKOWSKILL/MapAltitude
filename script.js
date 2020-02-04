@@ -24,7 +24,7 @@ function myDirection(ville1, ville2) {
 }
 
 function getElevation(ville1, ville2) {
-    var url = 'http://www.mapquestapi.com/directions/v2/route?key=YCkvK78NdGpW7eQx5LwDX5inOZHxUUsb&from='+ville1+'&to='+ville2;console.log(url);
+    var url = 'http://www.mapquestapi.com/directions/v2/route?key=YCkvK78NdGpW7eQx5LwDX5inOZHxUUsb&from='+ville1+'&to='+ville2;
     var request = new XMLHttpRequest();
     request.open('GET', url);
     request.responseType = 'json';
@@ -48,7 +48,6 @@ function getElevation(ville1, ville2) {
 
 function setElevation(stringGeoLoc) {
     var url= 'http://open.mapquestapi.com/elevation/v1/chart?key=YCkvK78NdGpW7eQx5LwDX5inOZHxUUsb&latLngCollection='+ stringGeoLoc;
-    console.log(url);
     fetch(url)
         .then(res=>{return res.blob()})
         .then(blob=>{
