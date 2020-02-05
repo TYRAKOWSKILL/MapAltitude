@@ -17,9 +17,6 @@ function createWindow () {
   // and load the index.html of the app.
   win.loadFile('index.html')
 
-  // Ouvre les DevTools.
-  win.webContents.openDevTools()
-
   // Émit lorsque la fenêtre est fermée.
   win.on('closed', () => {
     // Dé-référence l'objet window , normalement, vous stockeriez les fenêtres
