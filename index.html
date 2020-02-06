@@ -1,15 +1,18 @@
 <html>
   <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.1"></script>
+
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 
-    <script src="script.js"></script>
+    <script src="script.js" charset="utf-8"></script>
     <link type="text/css" rel="stylesheet" href="styles.css"/>
   </head>
 
@@ -25,14 +28,19 @@
         </div>
       </div>
       <div class="row mb-2">
-        <div class="col">  
-          <input id="ville1" type="text">
-          <input id="ville2" type="text">
+        <div class="col">
+          <input id="ville1" type="search" placeholder="Ville de départ" />
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <input id="ville2" type="search" placeholder="Ville d'arrivée" />
         </div>
       </div>
       <div class="row mb-2">
         <div class="col"> 
           <button id="buttonOk" type="button" class="btn btn-primary">Rechercher</button>
+          <button id="buttonClean" type="button" class="btn btn-danger">Reinitialiser</button>
         </div>
       </div>
       <div class="row mb-2">
@@ -42,9 +50,9 @@
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row mb-2 justify-content-center">
-        <div class="col-1"> 
-          <img id="chart" src="" alt="">
+      <div class="row mb-2">
+        <div class="col-3"> 
+            <img id="chart" src="" alt="">
         </div>
       </div>
     </div>
